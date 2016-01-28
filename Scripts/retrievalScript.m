@@ -10,7 +10,6 @@ clear;
 % initializations
 disp('Setting up environment...');
 addpath('../Functions/Detection');
-% Please download the DPM code and put it under the folder 'Libs'.
 addpath(genpath('../Libs/voc-release5'));
 disp('Environment is set up.');
 
