@@ -2,9 +2,9 @@
 % This script visualizes the retrieval results
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 addpath('../Libs/SubAxis');
-addpath('../Libs/voc-dpm-master/');
+addpath(genpath('../Libs/voc-dpm-master/'));
 addpath('../Libs/tight_subplot');
-startup;
+
 
 %% assign the sketch you want to use as query
 categoriesSketch = {'airplane', 'bicycle',	'standing bird',	'bus',	'car (sedan)',...

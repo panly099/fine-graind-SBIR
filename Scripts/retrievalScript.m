@@ -11,8 +11,7 @@ clear;
 disp('Setting up environment...');
 addpath('../Functions/Detection');
 % Please download the DPM code and put it under the folder 'Libs'.
-addpath('../Libs/voc-release5');
-startup;
+addpath(genpath('../Libs/voc-release5'));
 disp('Environment is set up.');
 
 categoriesSketch = {'airplane', 'bicycle',	'standing bird',	'bus',	'car (sedan)',...

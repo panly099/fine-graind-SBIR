@@ -10,8 +10,7 @@ clear;
 % Please download the DPM and RRWM code and put them under the folder 'Libs', 
 % and change the folder names when necessary.
 disp('Setting up environment...');
-addpath('../Libs/voc-release5');
-startup;
+addpath(genpath('../Libs/voc-release5'));
 addpath(genpath('../Functions'));
 addpath(genpath('../Libs/RRWM_release_v1.22'));
 addpath('../Libs/freezeColors');
@@ -34,7 +33,7 @@ numComp = 6; %DPM component number
 imgDPMPath = '../Data/DPMs/Img/';
 sketchDPMPath = '../Data/DPMs/Sketch/';
 
-resultPath = '../Result';
+resultPath = '../Results';
 if ~exist(resultPath, 'dir')
     mkdir(resultPath);
 end
