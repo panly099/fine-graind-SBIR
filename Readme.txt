@@ -14,7 +14,7 @@ How to start:
 ------------------------------------------------------------------------------------------------------------------
 1. Download the DPM code from: http://www.cs.berkeley.edu/~rbg/latent/
    and the RRWM code from: http://cv.snu.ac.kr/research/~RRWM/
-   Store them in the Libs folder.
+   Store them in the Libs folder. Do the necessary compilation. And make their names consistent with the names in the code.
 2. Go to 'Scripts' folder. 
    a) Run trainingScript.m to perform component alignment.
    b) Run retrievalScript.m to test on the ground truth and obtain benchmark.
