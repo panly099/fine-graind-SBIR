@@ -1,1 +1,0 @@
-# fine-graind-SBIR
