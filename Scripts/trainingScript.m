@@ -7,9 +7,10 @@ clear;
 
 %% Convert DPMs to star graphs
 
-% Please download the DPM code and put it under the folder 'Libs'.
+% Please download the DPM and RRWM code and put them under the folder 'Libs', 
+% and change the folder names when necessary.
 disp('Setting up environment...');
-addpath('../Libs/voc-dpm-master');
+addpath('../Libs/voc-release5');
 startup;
 addpath(genpath('../Functions'));
 addpath(genpath('../Libs/RRWM_release_v1.22'));
@@ -32,8 +33,16 @@ numComp = 6; %DPM component number
 % converted star graphs.
 imgDPMPath = '../Data/DPMs/Img/';
 sketchDPMPath = '../Data/DPMs/Sketch/';
-sketchStarGraphPath = '../Results/StarGraph/';
-imgStarGraphPath = '../Results/StarGraph/';
+
+resultPath = '../Result';
+if ~exist(resultPath, 'dir')
+    mkdir(resultPath);
+end
+
+starGraphPath = '../Results/StarGraph/';
+if ~exist(starGraphPath, 'dir')
+    mkdir(starGraphPath);
+end
 
 % compute star graph for models
 % sketches
@@ -45,7 +54,7 @@ if ~exist('../Results/StarGraph/sketchStars.mat','file')
         load(modelFullPath);
         sketchStars{i} = model2star(model);
     end
-    sketchResultPath = [sketchStarGraphPath, 'sketchStars.mat'];
+    sketchResultPath = [starGraphPath, 'sketchStars.mat'];
     save(sketchResultPath,'sketchStars');
 else
     load('../Results/StarGraph/sketchStars.mat');
@@ -61,7 +70,7 @@ if ~exist('../Results/StarGraph/imgStars.mat','file')
         imgStars{i} = model2star(model);
     end
     
-    imgResultPath = [imgStarGraphPath, 'imgStars.mat'];
+    imgResultPath = [starGraphPath, 'imgStars.mat'];
     save(imgResultPath, 'imgStars');
 else
     load('../Results/StarGraph/imgStars.mat')
@@ -71,6 +80,9 @@ end
 % component comparing experiment
 compCorrpsAll = zeros(numComp,numCate);
 alignmentPath = '../Results/CompAlign/';
+if ~exist(alignmentPath, 'dir')
+    mkdir(alignmentPath);
+end
 
 for cateId = 1 : numCate
     fprintf('processing category: %s\n',categoriesSketch{cateId});

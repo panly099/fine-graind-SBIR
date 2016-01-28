@@ -11,7 +11,7 @@ clear;
 disp('Setting up environment...');
 addpath('../Functions/Detection');
 % Please download the DPM code and put it under the folder 'Libs'.
-addpath('../Libs/voc-dpm-master');
+addpath('../Libs/voc-release5');
 startup;
 disp('Environment is set up.');
 
@@ -24,7 +24,9 @@ categoriesImage = {'aeroplane', 'bicycle', 'bird',	'bus', 'car',...
 testPath = '../Data/Test/images/';
 DPMPath = '../Data/DPMs/';
 detPath = '../Results/Detection/';
-
+if ~exist(detPath, 'dir')
+    mkdir(detPath);
+end
 numCate = length(categoriesSketch);
 
 %sketch
@@ -71,6 +73,9 @@ end
 
 %% retrieve on the detections
 retrResultFolder = '../Results/Retrieval/';
+if ~exist(retrResultFolder, 'dir')
+    mkdir(retrResultFolder);
+end
 testSkNum = 3;
 
 for cate = 1 : numCate
