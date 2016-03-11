@@ -27,7 +27,7 @@ for i = 3 : size(imgList,1)
     imgPath = [storePath,imgList(i).name];
     im = imread(imgPath);
     % detect objects
-    [ds, bs, ~, trees, pyra] = imgdetect(im, model, -1);
+    [ds, bs, trees, pyra] = imgdetect_customize(im, model, -1);
     
 
     % visualizations for different levels of feature pyramids

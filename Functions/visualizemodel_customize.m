@@ -1,6 +1,7 @@
 function visualizemodel_customize(model1, model2, components1, components2, PartCorrelations)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% A modified version of the DPM visualization code to suit our need. 
+% This version is modified by Yi Li (panly099@gmail.com) to suit our
+% project.
 % Input:
 %   model1,model2: DPM models.
 %   components1, components2: the corresponding components to show in each
