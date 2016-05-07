@@ -9,7 +9,8 @@ clear;
 
 % initializations
 disp('Setting up environment...');
-addpath('../Functions/Detection');
+addpath(genpath('../Functions');
+addpath(genpath('../Libs/RRWM_release_v1.22'));
 addpath(genpath('../Libs/voc-release5'));
 disp('Environment is set up.');
 
