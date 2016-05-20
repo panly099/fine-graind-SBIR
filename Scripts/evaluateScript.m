@@ -40,25 +40,25 @@ for cate = 1 : numCate
         ind = cell2mat(ind);
         
         switch aspect
-            case 'view'
-                skTopRating = view(ind, s);
-                totalScore = 2;
-            case 'conf'
-                skTopRating = conf(ind, s);
-                totalScore = 2;
-            case 'body'
-                skTopRating = body(ind, s);
-                totalScore = 2;
-            case 'zoom'
-                skTopRating = zoom(ind, s);
-                totalScore = 2;
-            case 'all'
-                skTopRating = cateRating(ind, (s-1)*4 + 1 : (s-1)*4 + 4);
-                totalScore = 8;
-        end
-        
-        score(s) = sum(skTopRating(:));
-        precision(s) = mean (sum(skTopRating,2) / totalScore);
+                case 'view'
+                    skTopRating = view(ind, s);
+                    totalScore = 1;
+                case 'conf'
+                    skTopRating = conf(ind, s);
+                    totalScore = 1;
+                case 'body'
+                    skTopRating = body(ind, s);
+                    totalScore = 1;
+                case 'zoom'
+                    skTopRating = zoom(ind, s);
+                    totalScore = 1;
+                case 'all'
+                    skTopRating = cateRating(ind, (s-1)*4 + 1 : (s-1)*4 + 4);
+                    totalScore = 4;
+            end
+            
+            score(s) = sum(skTopRating(:));
+            precision(s) = mean (sum(skTopRating ~= 0,2) / totalScore);
     end
     
     topScores(cate) = sum(score)/testSkNum;
